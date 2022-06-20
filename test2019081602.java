@@ -1,5 +1,5 @@
-//0816ÐÞ¸Ä£¬¼ÓÈë¶à»··ÉÐÐ¿ØÖÆ²ßÂÔ
-//µÚÒ»°æ
+//0816ï¿½Þ¸Ä£ï¿½ï¿½ï¿½ï¿½ï¿½à»·ï¿½ï¿½ï¿½Ð¿ï¿½ï¿½Æ²ï¿½ï¿½ï¿½
+//ï¿½ï¿½Ò»ï¿½ï¿½
 package com.dji.videostreamdecodingsample;
 import android.graphics.Bitmap;
 import android.support.annotation.NonNull;
@@ -76,6 +76,7 @@ import dji.sdk.useraccount.UserAccountManager;
 //import com.dji.videostreamdecodingsample.internal.utils.OnScreenJoystick;
 //import com.dji.videostreamdecodingsample.internal.utils.ToastUtils;
 //import com.dji.videostreamdecodingsample.internal.view.PresentableView;
+//test
 import dji.thirdparty.afinal.core.AsyncTask;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -101,7 +102,7 @@ MainActivity extends Activity implements DJICodecManager.YuvDataCallback,View.On
     private static final int MSG_WHAT_UPDATE_TITLE = 1;
     private SurfaceHolder.Callback surfaceCallback;
     private Bitmap bmp = null;
-    //OpenCV¿â¾²Ì¬¼ÓÔØ²¢³õÊ¼»¯
+    //OpenCVï¿½â¾²Ì¬ï¿½ï¿½ï¿½Ø²ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½
     static {
         if (!OpenCVLoader.initDebug()) {
             Log.wtf(TAG, "OpenCV failed to load!");
@@ -179,7 +180,7 @@ MainActivity extends Activity implements DJICodecManager.YuvDataCallback,View.On
     private StringBuilder stringBuilder;
     private int videoViewWidth;
     private int videoViewHeight;
-    //count×÷ÎªÈ«¾Ö±äÁ¿¿ØÖÆ·ÉÐÐ
+    //countï¿½ï¿½ÎªÈ«ï¿½Ö±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½ï¿½
     private int count,IsRecognizeMode=0;
     private int controlflag=0;
     private double xx=320,yy=240,zz=145;
@@ -514,43 +515,43 @@ MainActivity extends Activity implements DJICodecManager.YuvDataCallback,View.On
 //            return;
 //        }
 //        byte[] bytes;
-//        //bytesÊÇÎ´¾­¹ý´¦ÀíµÄyuvÊý¾Ý,ÑÐ¾¿·¢ÏÖÕâ¸öÊý¾Ý¿ÉÒÔ±»×ª»»ÎªMat¸ñÊ½²¢±£´æÏÂÀ´£¡£¡£¡
+//        //bytesï¿½ï¿½Î´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½yuvï¿½ï¿½ï¿½ï¿½,ï¿½Ð¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý¿ï¿½ï¿½Ô±ï¿½×ªï¿½ï¿½ÎªMatï¿½ï¿½Ê½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 //        bytes = yuvFrame;
 //        GetXYZFromMat(bytes,Environment.getExternalStorageDirectory() + "/DJI_ScreenShot", width, height);
 //    }
     /**
-     * µÃµ½MatÖÐÊ¶±ðµ½Ô²»·µÄXYZ£¬ÒÔÓÒÊÖ×ø±êÏµÎª±ê×¼
+     * ï¿½Ãµï¿½Matï¿½ï¿½Ê¶ï¿½ï¿½Ô²ï¿½ï¿½ï¿½ï¿½XYZï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÏµÎªï¿½ï¿½×¼
      */
     private void GetXYZFromMat(byte[] buf, int width, int height) {
         //LY
-        Mat mat_temp = new Mat(height*3/2,width,0);//³õÊ¼»¯Ò»¸ö¾ØÕó,Ã»Êý¾Ý
+        Mat mat_temp = new Mat(height*3/2,width,0);//ï¿½ï¿½Ê¼ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½,Ã»ï¿½ï¿½ï¿½ï¿½
         mat_temp.put(0,0,buf);
         Mat bgr_i420 = new Mat();
-//        Imgproc.cvtColor(mat_temp , bgr_i420, Imgproc.COLOR_YUV2BGR_I420);//×ª»»ÑÕÉ«¿Õ¼ä
-        Imgproc.cvtColor(mat_temp , bgr_i420, Imgproc.COLOR_YUV2RGB_I420);//×ª»»ÑÕÉ«¿Õ¼ä
-        //¿ªÊ¼Ê¶±ð
+//        Imgproc.cvtColor(mat_temp , bgr_i420, Imgproc.COLOR_YUV2BGR_I420);//×ªï¿½ï¿½ï¿½ï¿½É«ï¿½Õ¼ï¿½
+        Imgproc.cvtColor(mat_temp , bgr_i420, Imgproc.COLOR_YUV2RGB_I420);//×ªï¿½ï¿½ï¿½ï¿½É«ï¿½Õ¼ï¿½
+        //ï¿½ï¿½Ê¼Ê¶ï¿½ï¿½
         Mat input_rgb = new Mat();
 //        Imgproc.pyrDown(bgr_i420,input_rgb,new Size(640,480));
-        //½µµÍÍ¼Æ¬·Ö±æÂÊ
+        //ï¿½ï¿½ï¿½ï¿½Í¼Æ¬ï¿½Ö±ï¿½ï¿½ï¿½
         Imgproc.resize(bgr_i420,input_rgb,new Size(640,360));
-        //ÅòÕÍ£¬ÉèÖÃ²Ù×÷ÄÚºË
+        //ï¿½ï¿½ï¿½Í£ï¿½ï¿½ï¿½ï¿½Ã²ï¿½ï¿½ï¿½ï¿½Úºï¿½
         Mat strElement = Imgproc.getStructuringElement(Imgproc.MORPH_RECT,
                 new Size(3, 3),
                 new Point(-1, -1));
-        //ãÐÖµ·Ö¸î
+        //ï¿½ï¿½Öµï¿½Ö¸ï¿½
         Mat hsv_image = new Mat();
         Imgproc.cvtColor(input_rgb, hsv_image, Imgproc.COLOR_RGB2HSV);
         Mat blue_pic = new Mat();
-//        //ãÐÖµ·Ö¸î,³È»ÆÉ«
+//        //ï¿½ï¿½Öµï¿½Ö¸ï¿½,ï¿½È»ï¿½É«
 //        Core.inRange(hsv_image, new Scalar(11, 43, 46), new Scalar(255, 255, 255), blue_pic);
-//        ãÐÖµ·Ö¸î,³Â
+//        ï¿½ï¿½Öµï¿½Ö¸ï¿½,ï¿½ï¿½
         Core.inRange(hsv_image, new Scalar(0, 20, 120), new Scalar(255, 255, 255), blue_pic);
-//        // ÊÒÍâ»ÆÉ«
+//        // ï¿½ï¿½ï¿½ï¿½ï¿½É«
 //        Core.inRange(hsv_image, new Scalar(0, 93, 130), new Scalar(255, 255, 255), blue_pic);
 //        Imgproc.GaussianBlur(blue_pic, blue_pic, new Size(9, 9), 2, 2);
-        Log.d("cam", "½øÈëImgproc.GaussianBlur" + "\n");
-        //¸¯Ê´
-        //ÅòÕÍ²Ù×÷
+        Log.d("cam", "ï¿½ï¿½ï¿½ï¿½Imgproc.GaussianBlur" + "\n");
+        //ï¿½ï¿½Ê´
+        //ï¿½ï¿½ï¿½Í²ï¿½ï¿½ï¿½
         Imgproc.dilate(blue_pic,blue_pic,strElement,new Point(-1, -1), 1);
         Mat edges = new Mat();
         List<MatOfPoint> contours = new ArrayList<MatOfPoint>();
@@ -565,16 +566,16 @@ MainActivity extends Activity implements DJICodecManager.YuvDataCallback,View.On
             for (int i = 0; i < contours.size(); i++) {
                 MatOfPoint SrcMtx = contours.get(i);
                 MatOfPoint2f NewMtx = new MatOfPoint2f(SrcMtx.toArray());
-//                Log.d("center", "²É¼¯µ½µÄÃæ»ýÎª:  " + Imgproc.contourArea(contours.get(i))+"\n");
+//                Log.d("center", "ï¿½É¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îª:  " + Imgproc.contourArea(contours.get(i))+"\n");
                 if (Imgproc.contourArea(contours.get(i)) > 8000 && Imgproc.contourArea(contours.get(i)) <300000) {
-                    Log.d("center", "²É¼¯µ½µÄÃæ»ýÎª:  " + Imgproc.contourArea(contours.get(i))+"\n");
+                    Log.d("center", "ï¿½É¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îª:  " + Imgproc.contourArea(contours.get(i))+"\n");
                     Imgproc.minEnclosingCircle(NewMtx, center, radius);
                     if (null == center) {
                         break;
                     }
-                    Log.d("center", "×îÐ¡Íâ½ÓÔ²Ãæ»ýÎª:  " + 3.1415 * radius[0] * radius[0]+"\n");
+                    Log.d("center", "ï¿½ï¿½Ð¡ï¿½ï¿½ï¿½Ô²ï¿½ï¿½ï¿½Îª:  " + 3.1415 * radius[0] * radius[0]+"\n");
                     if (3.1415 * radius[0] * radius[0] / Imgproc.contourArea(contours.get(i)) < 1.5) {
-                        Log.d("center", "Ê¶±ðµ½ÁË·ûºÏÒªÇóµÄÔ²»·IsRecognizeCircle = true" + "\n");
+                        Log.d("center", "Ê¶ï¿½ï¿½ï¿½Ë·ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½Ô²ï¿½ï¿½IsRecognizeCircle = true" + "\n");
                         Log.d("center", "Imgproc.contourArea(contours.get(i)) < 1.5" + "\n");
                         Moments retral = Imgproc.moments(contours.get(i));
                         float c_x = (float) (retral.m10 / retral.m00);
@@ -618,7 +619,7 @@ MainActivity extends Activity implements DJICodecManager.YuvDataCallback,View.On
         Log.d("center", "center.x =" + xx + "\n");
         Log.d("center", "center.y =" + yy + "\n");
         Log.d("center", "center.z =" + zz + "\n");
-//        //Ê¶±ð½áÊø£¬ÐÂ½¨ÎÄ¼þÒÔ±£´æ
+//        //Ê¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â½ï¿½ï¿½Ä¼ï¿½ï¿½Ô±ï¿½ï¿½ï¿½
 //        File dir = new File(Environment.getExternalStorageDirectory() + "/DJI_Test7");
 //        if (!dir.exists() || !dir.isDirectory()) {
 //            dir.mkdirs();
@@ -631,7 +632,7 @@ MainActivity extends Activity implements DJICodecManager.YuvDataCallback,View.On
 //            Log.e(TAG, "test screenShot: new bitmap output file error: " + e);
 //            return;
 //        }
-//        //½«µÃµ½µÄMatÀàÐÍÔÚ×ª»»ÎªBitmapÀàÐÍÒÔ±ã±£´æ¹Û²ì
+//        //ï¿½ï¿½ï¿½Ãµï¿½ï¿½ï¿½Matï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×ªï¿½ï¿½ÎªBitmapï¿½ï¿½ï¿½ï¿½ï¿½Ô±ã±£ï¿½ï¿½Û²ï¿½
 //        bmp = Bitmap.createBitmap(input_rgb.cols(), input_rgb.rows(), Bitmap.Config.ARGB_8888);
 //        Utils.matToBitmap(input_rgb,bmp);
 //        bmp.compress(Bitmap.CompressFormat.JPEG, 80, outputFile);
@@ -641,7 +642,7 @@ MainActivity extends Activity implements DJICodecManager.YuvDataCallback,View.On
 //            Log.e(TAG, "test screenShot: compress yuv image error: " + e);
 //            e.printStackTrace();
 //        }
-//        //Ê¶±ð½áÊø£¬ÐÂ½¨ÎÄ¼þÒÔ±£´æend
+//        //Ê¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â½ï¿½ï¿½Ä¼ï¿½ï¿½Ô±ï¿½ï¿½ï¿½end
 
 //        gray_img.release();
 //        circles.release();
@@ -649,7 +650,7 @@ MainActivity extends Activity implements DJICodecManager.YuvDataCallback,View.On
         hsv_image.release();
         blue_pic.release();
         bgr_i420.release();
-        //¿ªÆôUIÏß³Ì
+        //ï¿½ï¿½ï¿½ï¿½UIï¿½ß³ï¿½
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
@@ -771,7 +772,7 @@ MainActivity extends Activity implements DJICodecManager.YuvDataCallback,View.On
     }
     private void handleYUVClick() {
         if (screenShot.isSelected()) {
-            //´ËÊ±Î´½øÈëÊ¶±ðÄ£Ê½
+            //ï¿½ï¿½Ê±Î´ï¿½ï¿½ï¿½ï¿½Ê¶ï¿½ï¿½Ä£Ê½
             screenShot.setText("ShtC");
             IsRecognizeMode=0;
             screenShot.setSelected(false);
@@ -794,7 +795,7 @@ MainActivity extends Activity implements DJICodecManager.YuvDataCallback,View.On
             savePath.setVisibility(View.INVISIBLE);
             stringBuilder = null;
         } else {
-            //´ËÊ±½øÈëÊ¶±ðÄ£Ê½£¡
+            //ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½Ê¶ï¿½ï¿½Ä£Ê½ï¿½ï¿½
             screenShot.setText("Live");
             TakeOffFlag = true;
             IsRecognizeMode=1;
@@ -902,7 +903,7 @@ MainActivity extends Activity implements DJICodecManager.YuvDataCallback,View.On
                         {
                             errorz = 0;
                         }
-                        //ÏÞÖÆ×î´óËÙ¶È
+                        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ù¶ï¿½
                         if (errorx > 0.5) {
                             errorx = (float) 0.5;
                         }
@@ -910,7 +911,7 @@ MainActivity extends Activity implements DJICodecManager.YuvDataCallback,View.On
                             errorx = (float) -0.5;
                         }
 
-                        //ÏÞÖÆ×î´óËÙ¶È
+                        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ù¶ï¿½
                         if (errory > 0.5) {
                             errory = (float) 0.5;
                         }
@@ -918,7 +919,7 @@ MainActivity extends Activity implements DJICodecManager.YuvDataCallback,View.On
                             errory = (float) -0.5;
                         }
 
-                        //ÏÞÖÆ×î´óËÙ¶È
+                        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ù¶ï¿½
                         if (errorz > 0.5) {
                             errorz = (float) 0.5;
                         }
@@ -932,7 +933,7 @@ MainActivity extends Activity implements DJICodecManager.YuvDataCallback,View.On
                         Log.d("center", "after:errorx=" + errorx + "\n");
                         Log.d("center", "after:errory=" + errory + "\n");
                         Log.d("center", "after:errorz=" + errorz + "\n");
-                        Log.d("center", "·¢ËÍÖ¸Áî¸ø·É¿Ø"+ "\n");
+                        Log.d("center", "ï¿½ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½ï¿½É¿ï¿½"+ "\n");
                         fcd.setPitch((float) (1.2*errorx));
                         fcd.setRoll((float) (1.2*errorz));
                         fcd.setVerticalThrottle((float) (1.2*errory));
