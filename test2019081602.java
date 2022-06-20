@@ -76,7 +76,6 @@ import dji.sdk.useraccount.UserAccountManager;
 //import com.dji.videostreamdecodingsample.internal.utils.OnScreenJoystick;
 //import com.dji.videostreamdecodingsample.internal.utils.ToastUtils;
 //import com.dji.videostreamdecodingsample.internal.view.PresentableView;
-//test
 import dji.thirdparty.afinal.core.AsyncTask;
 import java.io.File;
 import java.io.FileNotFoundException;
